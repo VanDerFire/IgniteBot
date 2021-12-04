@@ -7,18 +7,19 @@ import os
 import json
 from discord.ext import commands
 
-#Bot Configuration
-bot = commands.Bot(activity = discord.Game(name='FlameEngine Azure'))
-
 #Open config.json
 if os.path.isfile("config.json"):
 	with open("config.json") as file:
 		data = json.load(file)
 		#load the token
 		token = data["token"]
+		prefix = data["prefix"]
 		print("config.json loaded")
 else:
     print("config.json does not exist. Create the file and try again.")
+
+#Bot Configuration
+bot = commands.Bot(command_prefix=prefix, activity = discord.Game(name='FlameEngine Azure'))
 
 #Bot Events
 @bot.event
@@ -30,9 +31,10 @@ async def on_ready():
 #Bot Commands
 
 #Example command
-@bot.slash_command()
+@bot.slash_command(guild_ids=[...]) #Put here the IDs of the servers where you want the bot to run, this can be omitted, but keep in mind that new commands may take up to an hour to be registered (This applies to all slash-type commands)
 async def say(ctx, message):
 
-	await ctx.send(message)
+	await ctx.respond(message)
 
+bot.load_extension('cogs.Moderation')
 bot.run(token)
