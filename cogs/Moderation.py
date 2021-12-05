@@ -7,24 +7,16 @@ class Moderation(commands.Cog):
         self.bot = bot
  
     #Ban Command
-    @commands.slash_command(guild_ids=[884611858512887848])
+    @commands.slash_command(guild_ids=[...])
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason=None):
         if reason == None:
             reason = "no reason provided"
-        
-        embed = discord.Embed(title="AzureMOD",
-	description=f"**{member.mention} ha sido baneado**",
-	color=discord.Colour.dark_magenta())
-
-        embed.add_field(name='BanInfo', value=f"Reason: {reason}")
-        embed.set_thumbnail(url='./icons/Forbidden/forbidden_1.png')
-
-        await ctx.respond(embed)
+        await ctx.respond(f'User {member.mention} has been banned for "{reason}"')
         await ctx.guild.ban(member)
 
     #Kick Command
-    @commands.slash_command(guild_ids=[884611858512887848])
+    @commands.slash_command(guild_ids=[...])
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, member: discord.Member, *, reason=None):
         if reason == None:
