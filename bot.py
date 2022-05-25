@@ -1,9 +1,8 @@
 """"
-FireEngine V.0.1.0_pa-01 "Azure"- Original by VanDerFire
-(C)2021 
+VanDerFire Baihu
+(C)2021-2022
 """
 import discord
-#import random
 import os
 import json
 from discord.ext import commands
@@ -25,9 +24,11 @@ bot = commands.Bot(command_prefix=prefix, activity = discord.Game(name='FlameEng
 #Bot Events
 @bot.event
 async def on_ready():
-	print('FireEngine V.0.1.0_pa_01 "Azure"')
-	print(bot.user.name)
-	print(bot.user.id)
+	print('VanDerFire: Baihu')
+	print('(C)2021-2022 VanDerFire')
+	print("About the bot:")
+	print(f"Username: {bot.user.name}")
+	print(f"Bot ID: {bot.user.id}")
 
 #Bot Commands
 
@@ -39,4 +40,6 @@ async def say(ctx, message):
 
 bot.load_extension('cogs.Moderation')
 bot.load_extension('cogs.Interaction')
+
+#Run the bot
 bot.run(token)
