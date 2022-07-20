@@ -1,1 +1,1 @@
-![Project Logo](https://i.ibb.co/Wxrh4SS/Ignite.png)
+![Project Logo](https://i.ibb.co/gFW960G/Ignite.png)
