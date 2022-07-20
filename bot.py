@@ -1,5 +1,7 @@
 """"
-VanDerFire Baihu
+Ignite Discord Bot
+Original by VanDerFire
+MIT License
 (C)2021-2022
 """
 import discord
@@ -24,8 +26,9 @@ bot = commands.Bot(command_prefix=prefix, activity = discord.Game(name='FlameEng
 #Bot Events
 @bot.event
 async def on_ready():
-	print('VanDerFire: Baihu')
+	print('Ignite Discord Bot')
 	print('(C)2021-2022 VanDerFire')
+	print('Under MIT License.')
 	print("About the bot:")
 	print(f"Username: {bot.user.name}")
 	print(f"Bot ID: {bot.user.id}")
